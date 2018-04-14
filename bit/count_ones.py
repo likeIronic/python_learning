@@ -23,10 +23,20 @@ def count_ones_iter(n):
         count += 1
     return count
 
+def count_ones_mine(n):
+    count = 0
+    flag = 0x01
+    while n>0:
+        if (n & flag) == 1:
+            count += 1
+        n >>= 1
+    return count
 
 if __name__=='__main__':
     #n = 32
     n = 31
     print count_ones_recur(n)
     print count_ones_iter(n)
+    print count_ones_mine(n)
+
 
